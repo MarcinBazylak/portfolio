@@ -1,0 +1,13 @@
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^o-mnie$ ./index.php?page=o-mnie [NC]
+RewriteRule ^kontakt$ ./index.php?page=kontakt [NC]
+RewriteRule ^realizacje$ ./index.php?page=realizacje [NC]
+
+RewriteRule ^pobierz$ ./gps/download.php?file=key [NC]
+
+
+RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
