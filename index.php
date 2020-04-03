@@ -1,39 +1,19 @@
 <?
 session_start();
-
-$ip = $_SERVER['REMOTE_ADDR'];
-$host = gethostbyaddr($ip);
 $site = $_SERVER['REQUEST_URI'];
-$referer = $_SERVER['HTTP_REFERER'];
-$mtime = time();
-
-switch ($_GET['page']) {
-    case "":
-        $title = 'O mnie';
-		$description = 'Nazywam się Marcin Bazylak. Od kilkunastu lat zajmuję się programowaniem PHP, Web Designem oraz projektowaniem grafiki. Zapraszam do zapoznania się z moją ofertą.';
-        break;
-    case "realizacje":
-        $title = 'Realizacje';
-		$description = 'Moje projekty cechuje nienaganna staranność wykonania oraz pełna zgodność z najpopularniejszymi wyszukiwarkami. Zapoznaj się z moimi ostatnimi pracami.';
-        break;
-    case "kontakt":
-        $title = 'Kontakt';
-		$description = 'Skorzystaj z formularza kontaktowego jeżeli chciałbyś zapoznać się bliżej z moją ofertą.';
-        break;
-}
 
 echo '
 <!DOCTYPE html>
 <html lang="pl-PL">
 <HEAD>
-	<title>Marcin Bazylak - '.$title.'</title>
-	<meta name="description" content="'.$description.'">
+	<title>Marcin Bazylak - Portfolio</title>
+	<meta name="description" content="Nazywam się Marcin Bazylak. Od kilkunastu lat zajmuję się programowaniem PHP, Web Designem oraz projektowaniem grafiki. Zapraszam do zapoznania się z moją ofertą.">
 	<link rel="canonical" href="http://marcinbazylak.com/'.$site.'">
 
 	<meta property="og:url" content="http://mbgrafika.pl">
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="Marcin Bazylak - '.$title.'">
-	<meta property="og:description" content="'.$description.'">
+	<meta property="og:title" content="Marcin Bazylak - Portfolio">
+	<meta property="og:description" content="Nazywam się Marcin Bazylak. Od kilkunastu lat zajmuję się programowaniem PHP, Web Designem oraz projektowaniem grafiki. Zapraszam do zapoznania się z moją ofertą.">
 	<meta property="og:image" content="http://www.marcinbazylak.com/img/og_logo.jpg">
 	<meta charset="utf-8">
 	
@@ -101,5 +81,4 @@ echo '
 </body>
 </html>
 ';
-
 ?>

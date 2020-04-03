@@ -21,6 +21,7 @@ font-weight: 600;
 body a:hover {
 text-decoration: none;
 color: #333333;
+transform: scale(1.02);
 }
 
 span.mob {
@@ -126,6 +127,13 @@ transform: scale(1.02);
 box-shadow: 12px 12px 32px 0px rgba(0, 0, 0, 0.2);
 }
 
+button.contact:focus {
+transition-duration: 0.1s;
+transform: scale(1.01);
+box-shadow: 6px 6px 20px 0px rgba(0, 0, 0, 0.2);
+outline: 0;
+}
+
 button.home {
 font-family: Montserrat;
 background: linear-gradient(to bottom right, #ffffff, #f8f8f8);
@@ -148,6 +156,9 @@ box-shadow: 12px 12px 32px 0px rgba(0, 0, 0, 0.2);
 }
 
 button.home:focus {
+transition-duration: 0.1s;
+transform: scale(1.01);
+box-shadow: 6px 6px 20px 0px rgba(0, 0, 0, 0.2);
 outline: 0;
 }
 
