@@ -1,14 +1,10 @@
-<?
-session_start();
-$site = $_SERVER['REQUEST_URI'];
-
-echo '
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pl-PL">
 <HEAD>
 	<title>Marcin Bazylak - Portfolio</title>
 	<meta name="description" content="Nazywam się Marcin Bazylak. Od kilkunastu lat zajmuję się programowaniem PHP, Web Designem oraz projektowaniem grafiki. Zapraszam do zapoznania się z moją ofertą.">
-	<link rel="canonical" href="http://marcinbazylak.com/'.$site.'">
+	<link rel="canonical" href="http://marcinbazylak.com/">
 
 	<meta property="og:url" content="http://mbgrafika.pl">
 	<meta property="og:type" content="website">
@@ -47,38 +43,69 @@ echo '
 						<input type="checkbox" id="input-toggle">
 					<ul>
 						<li>
-							<a href="http://marcinbazylak.com" alt="Strona główna">Home</a>
+							<a class="nav-link" alt="Strona główna" id="home">Home</a>
 						</li>
 						<li>
-							<a href="http://marcinbazylak.com/o-mnie" alt="O mnie">O mnie</a>
+							<a class="nav-link" alt="O mnie" id="o-mnie">O mnie</a>
 						</li>
 						<li>
-							<a href="http://marcinbazylak.com/realizacje" alt="Realizacje">realizacje</a>
+							<a class="nav-link" alt="Realizacje" id="realizacje">realizacje</a>
 						</li>
 
 						<li>
-							<a href="http://marcinbazylak.com/kontakt" alt="Kontakt">kontakt</a>
+							<a class="nav-link" alt="Kontakt" id="kontakt">kontakt</a>
 						</li>
 					</ul>
 				</nav>
 		</header>
 		<main>
 			<div id="content">
-			';
-				if (empty($_GET['page'])){
-					include 'home.php';
-				} else {
-					include $_GET['page'].'.php';
-				}
-
-			echo '
+				<?php
+				if (isset($_POST['ok'])) {
+					if($_POST['name'] != "" && $_POST['email'] != "" && $_POST['enquiry'] != "") {
+						if ($_POST['kod']==$_SESSION['captcha']) {
+							$name = strip_tags($_POST['name']);
+							$name = addslashes($name);
+							$email = strip_tags($_POST['email']);
+							$email = addslashes($email);
+							$enquiry = strip_tags($_POST['enquiry']);
+							$enquiry = addslashes($enquiry);
+							
+							$adresat = "marcin@marcinbazylak.com";
+							
+							$temat = $name." wysłał wiadomość ze strony marcinbazylak.com.";
+							$temat = "=?UTF-8?B?".base64_encode($temat)."?=";
+							
+							$reply = $email;
+							$wiadomosc = $enquiry;
+							$headers = 'From: Formularz strony marcinbazylak.com <marcin@marcinbazylak.com>' . "\r\n" . 'Reply-To: '. $reply . '' . "\r\n" . 'Content-Type: text/plain; charset=UTF-8';
+							mail($adresat, $temat, $wiadomosc, $headers);
+				
+							echo '
+							<div class="confirm">Wiadomość została wysłana. Dziękuję.</div>
+							';
+						} else {
+							echo '
+							<div class="red">Wpisałeś niepoprawny kod.</div>
+							';
+						}
+					} else {
+						echo '
+						<div class="red">Wszystkie pola oznaczone gwiazdką muszą być wypełnione. Spróbuj jeszcze raz.</div>
+						';	
+					}
+				}?>
 			</div>
 		</main>
 		<footer>
 			Copuright 2019 Marcin Bazylak
 		</footer>
 	</div>
+			<script>console.log("aaa");</script>
+	<script src="_js/o-mnie.js"></script>
+	<script src="_js/realizacje.js"></script>
+	<script src="_js/kontakt.js"></script>
+	<script src="_js/home.js"></script>
+	<script src="_js/start.js"></script>
 </body>
 </html>
-';
-?>

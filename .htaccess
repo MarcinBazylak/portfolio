@@ -11,3 +11,4 @@ RewriteRule ^pobierz$ ./gps/download.php?file=key [NC]
 
 RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+AddType application/x-httpd-php .html .htm
