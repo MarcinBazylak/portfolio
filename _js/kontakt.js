@@ -1,5 +1,5 @@
 var kontakt = '<h1>Kontakt</h1>' +
-'<form enctype="multipart/form-data" action="" method="post">' +
+'<form enctype="multipart/form-data" action="" method="post" name="contactForm">' +
 '<input type="hidden" name="ok" value="1">' +
 '<div class="kontakt">' +
 'Marcin Bazylak<br>' +
@@ -28,7 +28,7 @@ var kontakt = '<h1>Kontakt</h1>' +
 
 var kontaktClick = document.getElementById("kontakt");
 kontaktClick.onclick = function() {
-	
+
 	if(content != "kontakt") {
 		document.getElementById("content").style.opacity = "0";
 		
@@ -42,6 +42,7 @@ kontaktClick.onclick = function() {
 			document.getElementById("content").style.opacity = "1";
 		}, 500);
 		content = "kontakt";
+		
 	}
 
 };

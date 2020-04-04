@@ -59,8 +59,8 @@
 				</nav>
 		</header>
 		<main>
-			<div id="content">
-				<?php
+			<div id="message">
+			<?php
 				if (isset($_POST['ok'])) {
 					if($_POST['name'] != "" && $_POST['email'] != "" && $_POST['enquiry'] != "") {
 						if ($_POST['kod']==$_SESSION['captcha']) {
@@ -83,29 +83,82 @@
 				
 							echo '
 							<div class="confirm">Wiadomość została wysłana. Dziękuję.</div>
+							<script>
+							setTimeout(function(){
+								document.getElementById("message").className = "open";
+							}, 500);
+
+							setTimeout(function(){
+								document.getElementById("message").className = "fade-in";
+							}, 1000);
+
+							setTimeout(function(){
+								document.getElementById("message").className = "fade-out";
+							}, 3000);
+
+							setTimeout(function(){
+								document.getElementById("message").className = "close";
+							}, 3500);
+							</script>
 							';
 						} else {
 							echo '
-							<div class="red">Wpisałeś niepoprawny kod.</div>
+							<div class="red" id="negative">Wiadomość nie została wysłana. Wpisałeś niepoprawny kod.</div>
+							<script>
+							setTimeout(function(){
+								document.getElementById("message").className = "open";
+							}, 500);
+
+							setTimeout(function(){
+								document.getElementById("message").className = "fade-in";
+							}, 1000);
+
+							setTimeout(function(){
+								document.getElementById("message").className = "fade-out";
+							}, 3000);
+
+							setTimeout(function(){
+								document.getElementById("message").className = "close";
+							}, 3500);
+							</script>
 							';
 						}
 					} else {
 						echo '
-						<div class="red">Wszystkie pola oznaczone gwiazdką muszą być wypełnione. Spróbuj jeszcze raz.</div>
+						<div class="red" id="negative">Wiadomość nie została wysłana. Wszystkie pola oznaczone gwiazdką muszą być wypełnione. Spróbuj jeszcze raz.</div>
+						<script>
+						setTimeout(function(){
+							document.getElementById("message").className = "open";
+						}, 500);
+
+						setTimeout(function(){
+							document.getElementById("message").className = "fade-in";
+						}, 1000);
+
+						setTimeout(function(){
+							document.getElementById("message").className = "fade-out";
+						}, 3000);
+
+						setTimeout(function(){
+							document.getElementById("message").className = "close";
+						}, 3500);
+						</script>
 						';	
 					}
 				}?>
+			</div>
+			<div id="content">
+
 			</div>
 		</main>
 		<footer>
 			Copuright 2019 Marcin Bazylak
 		</footer>
 	</div>
-			<script>console.log("aaa");</script>
 	<script src="_js/o-mnie.js"></script>
 	<script src="_js/realizacje.js"></script>
 	<script src="_js/kontakt.js"></script>
 	<script src="_js/home.js"></script>
 	<script src="_js/start.js"></script>
-</body>
+	</body>
 </html>
