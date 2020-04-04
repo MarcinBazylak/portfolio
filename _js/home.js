@@ -52,8 +52,7 @@ function kontaktClick2() {
 }
 
 var home = '<h1>' +
-'<span class="desk">Marcin Bazylak - PORTFOLIO</span>' +
-'<span class="mob">Marcin<br>Bazylak<br>PORTFOLIO</span>' +
+'<span class="desk">Marcin Bazylak<br><span style="color: #999999;">PORTFOLIO</span></span>' +
 '</h1>' +
 '<div class="buttons">' +
 '<button type="button" class="home" id="o-mnie-btn" tabIndex="-1" onclick="oMnieClick2()">O mnie</button>' +

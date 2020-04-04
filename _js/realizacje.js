@@ -5,7 +5,7 @@ var realizacje = '<h1>Realizacje</h1>' +
 '<a href="img/tracker2.jpg" data-lightbox="image-1"><img src="img/tracker2.jpg" alt="realizacje" class="realizacje"  style="max-width: 120px; margin-left: 15px;"></a>' +
 '</div>' +
 '<div class="projects_description">' +
-'<h3>Child Tracker</h3> Aplikacja na system Android, pozwalająca na śledzenie lokalizacji telefonu dziecka.' +
+'<h3>Child Tracker</h3> Aplikacja na system Android, pozwalająca rodzicom na śledzenie lokalizacji telefonu dziecka.' +
 '<br>' +
 '<b>Użyte technologie:</b>' +
 '<br>' +
