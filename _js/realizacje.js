@@ -1,4 +1,4 @@
-var realizacje = '<h1>Realizacje</h1>' +
+var portfolio = '<h1>Realizacje</h1>' +
 '<div class="projects">' +
 '<div class="projects_photo">' +
 '<a href="img/tracker1.jpg" data-lightbox="image-1"><img src="img/tracker1.jpg" alt="realizacje" class="realizacje" style="max-width: 120px;"></a>' +
@@ -73,22 +73,22 @@ var realizacje = '<h1>Realizacje</h1>' +
 '<div style="clear:both;"></div>' +
 '</div>';
 
-var realizacjeClick = document.getElementById("realizacje");
-realizacjeClick.onclick = function() {
+var portfolioClick = document.getElementById("portfolio");
+portfolioClick.onclick = function() {
 	
-	if(content != "realizacje") {
+	if(content != "portfolio") {
 		document.getElementById("content").style.opacity = "0";
 		
 		document.getElementById("input-toggle").checked = false;
 		
 		setTimeout(function(){
-			document.getElementById("content").innerHTML = realizacje;
+			document.getElementById("content").innerHTML = portfolio;
 		}, 500);
 		
 		setTimeout(function(){
 			document.getElementById("content").style.opacity = "1";
 		}, 500);
-		content = "realizacje";
+		content = "portfolio";
 	}
 
 };

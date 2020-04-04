@@ -200,30 +200,31 @@ box-shadow: 6px 6px 20px 0px rgba(0, 0, 0, 0.2);
 outline: 0;
 }
 
+	div.confirm {
+		border: 0;
+		color: white;
+		font-weight: 800;
+		padding: 20px;
+		line-height: 1.6;
+		letter-spacing: 2px;
+		margin: 20px auto;
+		width: calc(100% - 40px);
+		max-width: 1000px;
+		background: green;
+	}
 
-div.confirm {
-border: solid 1px #cccccc;
-color: green;
-padding: 20px;
-line-height: 1.6;
-letter-spacing: 2px;
-border-radius: 10px;
-margin: 20px auto;
-width: 95%;
-box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.2)
-}
-
-div.red {
-border: solid 1px #cccccc;
-color: red;
-padding: 20px;
-line-height: 1.6;
-letter-spacing: 2px;
-border-radius: 10px;
-margin: 20px auto;
-width: 95%;
-box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.2)
-}
+	div.red {
+		border: 0;
+		color: white;
+		font-weight: 800;
+		padding: 20px;
+		line-height: 1.6;
+		letter-spacing: 2px;
+		margin: 20px auto;
+		width: calc(100% - 40px);
+		max-width: 1000px;
+		background: coral;
+	}
 
 p {
 text-align: left;

@@ -1,53 +1,53 @@
 
-function oMnieClick2() {
+function aboutMeClick2() {
 		
 	document.getElementById("content").style.opacity = "0";
 	
 	document.getElementById("input-toggle").checked = false;
 	
 	setTimeout(function(){
-		document.getElementById("content").innerHTML = oMnie;
+		document.getElementById("content").innerHTML = aboutMe;
 	}, 500);
 	
 	setTimeout(function(){
 		document.getElementById("content").style.opacity = "1";
 	}, 500);
-	content = "oMnie";
+	content = "aboutMe";
 
 }
 
-function realizacjeClick2() {
+function portfolioClick2() {
 		
 	document.getElementById("content").style.opacity = "0";
 	
 	document.getElementById("input-toggle").checked = false;
 	
 	setTimeout(function(){
-		document.getElementById("content").innerHTML = realizacje;
+		document.getElementById("content").innerHTML = portfolio;
 	}, 500);
 	
 	setTimeout(function(){
 		document.getElementById("content").style.opacity = "1";
 	}, 500);
-	content = "realizacje";
+	content = "portfolio";
 
 }
 
 
-function kontaktClick2() {
+function contactClick2() {
 		
 	document.getElementById("content").style.opacity = "0";
 	
 	document.getElementById("input-toggle").checked = false;
 	
 	setTimeout(function(){
-		document.getElementById("content").innerHTML = kontakt;
+		document.getElementById("content").innerHTML = contact;
 	}, 500);
 	
 	setTimeout(function(){
 		document.getElementById("content").style.opacity = "1";
 	}, 500);
-	content = "kontakt";
+	content = "contact";
 
 }
 
@@ -55,9 +55,9 @@ var home = '<h1>' +
 '<span class="desk">Marcin Bazylak<br><span style="color: #999999;">PORTFOLIO</span></span>' +
 '</h1>' +
 '<div class="buttons">' +
-'<button type="button" class="home" id="o-mnie-btn" tabIndex="-1" onclick="oMnieClick2()">O mnie</button>' +
-'<button type="button" class="home" id="realizacjeBtn" tabIndex="-1" onclick="realizacjeClick2()">Realizacje</button>' +
-'<button type="button" class="home" id="kontaktBtn" tabIndex="-1" onclick="kontaktClick2()">Kontakt</button>' +
+'<button type="button" class="home" id="o-mnie-btn" tabIndex="-1" onclick="aboutMeClick2()">O mnie</button>' +
+'<button type="button" class="home" id="realizacjeBtn" tabIndex="-1" onclick="portfolioClick2()">Realizacje</button>' +
+'<button type="button" class="home" id="kontaktBtn" tabIndex="-1" onclick="contactClick2()">Kontakt</button>' +
 '</div>';
 
 var homeClick = document.getElementById("home");

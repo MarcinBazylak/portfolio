@@ -1,4 +1,4 @@
-var oMnie = '<h1>O mnie</h1>' +
+var aboutMe = '<h1>O mnie</h1>' +
 '<div class="kontakt">' +
 '<p>' +
 'Nazywam się Marcin Bazylak i jestem programistą oraz grafikiem komputerowym. Na codzień tworzę serwisy internetowe i aplikacje na smartfony z systemem Android. ' +
@@ -19,22 +19,22 @@ var oMnie = '<h1>O mnie</h1>' +
 '</center>' +
 '</div>';
 
-var oMnieClick = document.getElementById("o-mnie");
-oMnieClick.onclick = function() {
+var aboutMeClick = document.getElementById("about-me");
+aboutMeClick.onclick = function() {
 	
-	if(content != "oMnie") {
+	if(content != "aboutMe") {
 		document.getElementById("content").style.opacity = "0";
 		
 		document.getElementById("input-toggle").checked = false;
 		
 		setTimeout(function(){
-			document.getElementById("content").innerHTML = oMnie;
+			document.getElementById("content").innerHTML = aboutMe;
 		}, 500);
 		
 		setTimeout(function(){
 			document.getElementById("content").style.opacity = "1";
 		}, 500);
-		content = "oMnie";
+		content = "aboutMe";
 	}
 
 };

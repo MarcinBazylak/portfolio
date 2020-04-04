@@ -1,4 +1,4 @@
-var kontakt = '<h1>Kontakt</h1>' +
+var contact = '<h1>Kontakt</h1>' +
 '<form enctype="multipart/form-data" action="" method="post" name="contactForm">' +
 '<input type="hidden" name="ok" value="1">' +
 '<div class="kontakt">' +
@@ -26,22 +26,22 @@ var kontakt = '<h1>Kontakt</h1>' +
 '</div>' +
 '</form>';
 
-var kontaktClick = document.getElementById("kontakt");
-kontaktClick.onclick = function() {
+var contactClick = document.getElementById("contact");
+contactClick.onclick = function() {
 
-	if(content != "kontakt") {
+	if(content != "contact") {
 		document.getElementById("content").style.opacity = "0";
 		
 		document.getElementById("input-toggle").checked = false;
 		
 		setTimeout(function(){
-			document.getElementById("content").innerHTML = kontakt;
+			document.getElementById("content").innerHTML = contact;
 		}, 500);
 		
 		setTimeout(function(){
 			document.getElementById("content").style.opacity = "1";
 		}, 500);
-		content = "kontakt";
+		content = "contact";
 		
 	}
 

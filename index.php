@@ -9,7 +9,7 @@
 	<meta property="og:url" content="http://mbgrafika.pl">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Marcin Bazylak - Portfolio">
-	<meta property="og:description" content="Nazywam się Marcin Bazylak. Od kilkunastu lat zajmuję się programowaniem PHP, Web Designem oraz projektowaniem grafiki. Zapraszam do zapoznania się z moją ofertą.">
+	<meta property="og:description" content="Nazywam się Marcin Bazylak. Od kilku lat zajmuję się programowaniem PHP, Web Designem oraz projektowaniem grafiki. Zapraszam do zapoznania się z moją ofertą.">
 	<meta property="og:image" content="http://www.marcinbazylak.com/img/og_logo.jpg">
 	<meta charset="utf-8">
 	
@@ -28,7 +28,6 @@
 	<link rel="Stylesheet" type="text/css" href="css/lbx.css" />
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="_js/autoresize.jquery.js"></script>
 	<script src="_lightbox/dist/js/lightbox.js"></script>
 </HEAD>
 <body>
@@ -46,14 +45,14 @@
 							<a class="nav-link" alt="Strona główna" id="home">Home</a>
 						</li>
 						<li>
-							<a class="nav-link" alt="O mnie" id="o-mnie">O mnie</a>
+							<a class="nav-link" alt="O mnie" id="about-me">O mnie</a>
 						</li>
 						<li>
-							<a class="nav-link" alt="Realizacje" id="realizacje">realizacje</a>
+							<a class="nav-link" alt="Realizacje" id="portfolio">realizacje</a>
 						</li>
 
 						<li>
-							<a class="nav-link" alt="Kontakt" id="kontakt">kontakt</a>
+							<a class="nav-link" alt="Kontakt" id="contact">kontakt</a>
 						</li>
 					</ul>
 				</nav>
