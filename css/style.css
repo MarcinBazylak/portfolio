@@ -350,18 +350,18 @@ box-shadow: 12px 12px 32px 0px rgba(0, 0, 0, 0.2)
 }
 
 input.captcha {
-margin-left: 10px;
-font-family: Montserrat;
-font-size: 16px;
-border-radius: 5px;
-padding: 5px;
-border-style: solid;
-border-color: #444444;
-border-width: 1px;
-height: 20px;
-width: 125px;
-background: none;
-color: #333333;
+	margin-top: 10px;
+	font-family: Montserrat;
+	font-size: 16px;
+	border-radius: 5px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #444444;
+	border-width: 1px;
+	height: 20px;
+	width: 124px;
+	background: none;
+	color: #333333;
 }
 
 input.contact {

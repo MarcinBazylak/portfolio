@@ -310,8 +310,8 @@
                                 Przepisz kod z obrazka
                             </div>
                             <div class="form_field">
-                                <img style="margin-bottom: -9px;" src="img/captcha.php"><input type="text" name="kod"
-                                    class="captcha" maxlength="6" autocomplete="off">
+                                <img style="margin-bottom: -9px; margin-right: 10px;" src="img/captcha.php"><input type="text" name="kod"
+                                    class="captcha" maxlength="6" autocomplete="off" required>
                             </div>
                             <div class="form_field">
                                 <button type="submit" class="contact">Wyślij wiadomość</button>
