@@ -32,6 +32,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="_lightbox/dist/js/lightbox.js"></script>
+    <script src="_js/cookie.js"></script>
+	<script>CookieAlert.init();</script>
 </HEAD>
 
 <body>
