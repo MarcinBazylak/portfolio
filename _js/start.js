@@ -1,10 +1,8 @@
-	setTimeout(function(){
-		document.getElementById("content").innerHTML = home;
-	}, 500);
-	
-	setTimeout(function(){
-		document.getElementById("content").style.opacity = "1";
-	}, 500);
-	content = "home";
+	var content = "home"
+	document.getElementById("home-div").style.opacity = "1";
+	document.getElementById("home-div").style.display = "block";
 
-	console.log(home);
+	setTimeout(function(){
+		document.getElementById("home-div").className = "inplace";
+	}, 100);
+	
