@@ -30,10 +30,40 @@
     <link rel="Stylesheet" type="text/css" href="css/menu.css" />
     <link rel="Stylesheet" type="text/css" href="css/lbx.css" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="_lightbox/dist/js/lightbox.js"></script>
     <script src="_js/cookie.js"></script>
 	<script>CookieAlert.init();</script>
+
+   <script>
+      $(function () {
+
+        $('#contactForm').on('submit', function (e) {
+
+          e.preventDefault();
+
+          $.ajax({
+            type: 'post',
+            url: 'send.php',
+            data: {
+               name: $('#name').val(),
+               email: $('#email').val(),
+               text: $('#txtInput').val(),
+               kod: $('#kod').val()
+               },
+            success: function (data) {
+              /*alert($('#contactForm').serialize());*/
+              document.getElementById("contactForm").reset();
+              document.getElementById("message").style.height = "100px";
+              showAlert(data);
+            }
+          });   
+
+        });
+
+      });
+    </script>
+
 </HEAD>
 
 <body>
@@ -64,94 +94,7 @@
             </nav>
         </header>
         <main>
-            <div id="message">
-                <?php
-				if (isset($_POST['ok'])) {
-					if($_POST['name'] != "" && $_POST['email'] != "" && $_POST['enquiry'] != "") {
-						if ($_POST['kod']==$_SESSION['captcha']) {
-							$name = strip_tags($_POST['name']);
-							$name = addslashes($name);
-							$email = strip_tags($_POST['email']);
-							$email = addslashes($email);
-							$enquiry = strip_tags($_POST['enquiry']);
-							$enquiry = addslashes($enquiry);
-							
-							$adresat = "marcin@marcinbazylak.com";
-							
-							$temat = $name." wysłał wiadomość ze strony marcinbazylak.com.";
-							$temat = "=?UTF-8?B?".base64_encode($temat)."?=";
-							
-							$reply = $email;
-							$wiadomosc = $enquiry;
-							$headers = 'From: Formularz strony marcinbazylak.com <marcin@marcinbazylak.com>' . "\r\n" . 'Reply-To: '. $reply . '' . "\r\n" . 'Content-Type: text/plain; charset=UTF-8';
-							mail($adresat, $temat, $wiadomosc, $headers);
-				
-							echo '
-							<div class="confirm">Wiadomość została wysłana. Dziękuję.</div>
-							<script>
-							setTimeout(function(){
-								document.getElementById("message").className = "open";
-							}, 1500);
-
-							setTimeout(function(){
-								document.getElementById("message").className = "fade-in";
-							}, 2000);
-
-							setTimeout(function(){
-								document.getElementById("message").className = "fade-out";
-							}, 4000);
-
-							setTimeout(function(){
-								document.getElementById("message").className = "close";
-							}, 4500);
-							</script>
-							';
-						} else {
-							echo '
-							<div class="red" id="negative">Wiadomość nie została wysłana. Wpisałeś niepoprawny kod.</div>
-							<script>
-							setTimeout(function(){
-								document.getElementById("message").className = "open";
-							}, 1500);
-
-							setTimeout(function(){
-								document.getElementById("message").className = "fade-in";
-							}, 2000);
-
-							setTimeout(function(){
-								document.getElementById("message").className = "fade-out";
-							}, 4000);
-
-							setTimeout(function(){
-								document.getElementById("message").className = "close";
-							}, 4500);
-							</script>
-							';
-						}
-					} else {
-						echo '
-						<div class="red" id="negative">Wiadomość nie została wysłana. Wszystkie pola oznaczone gwiazdką muszą być wypełnione. Spróbuj jeszcze raz.</div>
-						<script>
-						setTimeout(function(){
-							document.getElementById("message").className = "open";
-						}, 1500);
-
-						setTimeout(function(){
-							document.getElementById("message").className = "fade-in";
-						}, 2000);
-
-						setTimeout(function(){
-							document.getElementById("message").className = "fade-out";
-						}, 4000);
-
-						setTimeout(function(){
-							document.getElementById("message").className = "close";
-						}, 4500);
-						</script>
-						';	
-					}
-				}?>
-            </div>
+            <div id="message"></div>
             <div id="content">
                 <div id="home-div">
                     <h1>
@@ -252,8 +195,7 @@
                     </div>
                     <div class="projects">
                         <div class="projects_photo">
-                            <a href="img/czyscioch.jpg" data-lightbox="image-4"><img src="img/czyscioch.jpg"
-                                    alt="realizacje" class="realizacje"></a>
+                            <a href="img/czyscioch.jpg" data-lightbox="image-4"><img src="img/czyscioch.jpg" alt="realizacje" class="realizacje"></a>
                         </div>
                         <div class="projects_description">
                             <h3>czyścioch</h3>Projekt strony firmy zajmującej się kompleksowymi pracami porządkowymi.
@@ -268,13 +210,14 @@
                     </div>
                     <div class="projects">
                         <div class="projects_photo">
-                            <a href="img/motolux.jpg" data-lightbox="image-5"><img src="img/motolux.jpg"
-                                    alt="realizacje" class="realizacje"></a>
+                            <a href="img/motolux.jpg" data-lightbox="image-5"><img src="img/motolux.jpg" alt="realizacje" class="realizacje"></a>
                         </div>
                         <div class="projects_description">
-                            <h3>moto-lux</h3>Projekt strony dealera samochodów używanych MOTO-LUX.
+                            <h3><a href="http://motolux.cba.pl" target="_blank">moto-lux</a></h3>Projekt strony dealera samochodów używanych MOTO-LUX.
                             <br>
                             <b>Użyte technologie:</b>
+                            <br>
+                            Responsive Web Design,
                             <br>
                             <b>HTML</b>, <b>CSS</b>, <b>PHP</b>, <b>MySQL</b>, <b>Javascript</b>, Obsługa przez
                             <b>CMS</b>
@@ -285,7 +228,7 @@
 
                 <div id="contact-div">
                     <h1>Kontakt</h1>
-                    <form enctype="multipart/form-data" action="" method="post" name="contactForm">
+                    <form enctype="multipart/form-data" action="send.php" method="post" id="contactForm"">
                         <input type="hidden" name="ok" value="1">
                         <div class="kontakt">
                             Marcin Bazylak<br>
@@ -294,27 +237,27 @@
                             dokładniej z moją ofertą lub masz do mnie jakieś inne pytania, możesz się ze mną
                             skontaktować korzystając z poniższego formularza.
                             <div class="form_field">
-                                <input placeholder="Twoje imię" type="text" name="name" class="contact" maxlength="80"
+                                <input placeholder="Twoje imię" id="name" type="text" name="name" class="contact" maxlength="80"
                                     autocomplete="off" required>
                             </div>
                             <div class="form_field">
-                                <input placeholder="Twój adres email" type="email" name="email" class="contact"
+                                <input placeholder="Twój adres email" id="email" type="email" name="email" class="contact"
                                     maxlength="80" autocomplete="off" required>
                             </div>
                             <div class="form_field">
                                 <textarea placeholder="Twoja wiadomość" class="contact" id="txtInput" name="enquiry"
-                                    required
-                                    oninput="this.style.height = '' ;this.style.height = this.scrollHeight + 'px'"></textarea>
+                                    
+                                    oninput="this.style.height = '' ;this.style.height = this.scrollHeight + 'px'"  required></textarea>
                             </div>
                             <div class="form_field">
                                 Przepisz kod z obrazka
                             </div>
                             <div class="form_field">
                                 <img style="margin-bottom: -9px; margin-right: 10px;" src="img/captcha.php"><input type="text" name="kod"
-                                    class="captcha" maxlength="6" autocomplete="off" required>
+                                    class="captcha" maxlength="6" autocomplete="off" id="kod" required>
                             </div>
                             <div class="form_field">
-                                <button type="submit" class="contact">Wyślij wiadomość</button>
+                                <button type="submit" class="contact" name="button">Wyślij wiadomość</button>
                             </div>
                         </div>
                     </form>
@@ -329,9 +272,40 @@
 	<script src="_js/start.js"></script>
 	<script src="_js/o-mnie.js"></script>
 	<script src="_js/home.js"></script>
-    <script src="_js/realizacje.js"></script>
-    <script src="_js/kontakt.js"></script>
-    
+   <script src="_js/realizacje.js"></script>
+   <script src="_js/kontakt.js"></script>
+   <script>
+   function showAlert(data) {
+      setTimeout(function(){
+
+         var messageField = document.getElementById("message");
+
+         messageField.className = "open";
+         if(data == "success") {
+            messageField).innerHTML = '<div class="confirm">Wiadomość została wysłana. Dziękuję.</div>';
+         }else if(data == "wrongtoken") {
+            messageField.innerHTML = '<div class="red">Wprowadziłeś niepoprawny kod. Wiadomość nie została wysłana</div>';
+         }else {
+            messageField.innerHTML = '<div class="red">Wystąpił nieoczekiwany błąd. Wiadomość nie została wysłana<br>'+data+'</div>';
+         }
+         }, 1500);
+
+         setTimeout(function(){
+            messageField.className = "fade-in";
+         }, 2000);
+
+         setTimeout(function(){
+            messageField.className = "fade-out";
+         }, 4000);
+
+         setTimeout(function(){
+            messageField.className = "close";
+         }, 4500);
+      }
+    </script>
+<script>
+
+</script>
     
 </body>
 
