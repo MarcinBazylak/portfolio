@@ -6,7 +6,7 @@ RewriteRule ^o-mnie$ ./index.php?page=o-mnie [NC]
 RewriteRule ^kontakt$ ./index.php?page=kontakt [NC]
 RewriteRule ^realizacje$ ./index.php?page=realizacje [NC]
 
-RewriteRule ^pobierz$ ./gps/download.php?file=key [NC]
+RewriteRule ^pobierz$ ./gps/download.php?file=child_tracker [NC]
 
 
 RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]

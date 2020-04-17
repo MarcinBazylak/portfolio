@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+session_start();
+//include 'stats.php'
+?>
 <!DOCTYPE html>
 <html lang="pl-PL">
 
@@ -8,7 +11,7 @@
         content="Nazywam się Marcin Bazylak. Od kilkunastu lat zajmuję się programowaniem PHP, Web Designem oraz projektowaniem grafiki. Zapraszam do zapoznania się z moją ofertą.">
     <link rel="canonical" href="http://marcinbazylak.com/">
 
-    <meta property="og:url" content="http://mbgrafika.pl">
+    <meta property="og:url" content="http://marcinbazylak.com">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Marcin Bazylak - Portfolio">
     <meta property="og:description"
@@ -71,11 +74,13 @@
         <header>
             <nav>
                 <label class="navigation-toggle" for="input-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span id="sp-one"></span>
+                    <span id="sp-two"></span>
+                    <span id="sp-three"></span>
                 </label>
+               
                 <input type="checkbox" id="input-toggle">
+                
                 <ul>
                     <li>
                         <a class="nav-link" alt="Strona główna" id="home">Home</a>
@@ -274,38 +279,37 @@
 	<script src="_js/home.js"></script>
    <script src="_js/realizacje.js"></script>
    <script src="_js/kontakt.js"></script>
+   <script src="_js/menu.js"></script>
    <script>
-   function showAlert(data) {
-      setTimeout(function(){
 
-         var messageField = document.getElementById("message");
+   var messageField = document.getElementById("message");
+   function showAlert(data) {
+
+      setTimeout(function(){
 
          messageField.className = "open";
          if(data == "success") {
-            messageField).innerHTML = '<div class="confirm">Wiadomość została wysłana. Dziękuję.</div>';
+            messageField.innerHTML = '<div class="confirm">Wiadomość została wysłana. Dziękuję.</div>';
          }else if(data == "wrongtoken") {
             messageField.innerHTML = '<div class="red">Wprowadziłeś niepoprawny kod. Wiadomość nie została wysłana</div>';
          }else {
             messageField.innerHTML = '<div class="red">Wystąpił nieoczekiwany błąd. Wiadomość nie została wysłana<br>'+data+'</div>';
          }
-         }, 1500);
+         }, 500);
 
          setTimeout(function(){
             messageField.className = "fade-in";
-         }, 2000);
+         }, 1000);
 
          setTimeout(function(){
             messageField.className = "fade-out";
-         }, 4000);
+         }, 3000);
 
          setTimeout(function(){
             messageField.className = "close";
-         }, 4500);
+         }, 3500);
       }
     </script>
-<script>
-
-</script>
     
 </body>
 

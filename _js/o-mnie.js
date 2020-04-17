@@ -1,6 +1,7 @@
 var aboutMeClick = document.getElementById("about-me");
 aboutMeClick.onclick = function() {
     document.getElementById("input-toggle").checked = false;
+    makeBurgerNormal()
 
     if (content != "aboutMe") {
         document.getElementById("home-div").className = "";
@@ -29,6 +30,7 @@ aboutMeClick.onclick = function() {
 var aboutMeClickBtn = document.getElementById("o-mnie-btn");
 aboutMeClickBtn.onclick = function() {
     document.getElementById("input-toggle").checked = false;
+    makeBurgerNormal()
 
     if (content != "aboutMe") {
         document.getElementById("home-div").className = "";

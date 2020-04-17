@@ -1,6 +1,7 @@
 var contactClick = document.getElementById("contact");
 contactClick.onclick = function() {
     document.getElementById("input-toggle").checked = false;
+    makeBurgerNormal()
 
     if (content != "contact") {
         document.getElementById("home-div").className = "";
@@ -29,6 +30,7 @@ contactClick.onclick = function() {
 var contactClickBtn = document.getElementById("kontaktBtn");
 contactClickBtn.onclick = function() {
     document.getElementById("input-toggle").checked = false;
+    makeBurgerNormal()
 
     if (content != "contact") {
         document.getElementById("home-div").className = "";

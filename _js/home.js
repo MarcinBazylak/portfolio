@@ -1,6 +1,7 @@
 var homeClick = document.getElementById("home");
 homeClick.onclick = function() {
     document.getElementById("input-toggle").checked = false;
+    makeBurgerNormal()
 
     if (content != "home") {
         document.getElementById("about-me-div").className = "";

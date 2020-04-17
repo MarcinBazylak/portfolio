@@ -1,6 +1,7 @@
 var portfolioClick = document.getElementById("portfolio");
 portfolioClick.onclick = function() {
     document.getElementById("input-toggle").checked = false;
+    makeBurgerNormal()
 
     if (content != "portfolio") {
         document.getElementById("home-div").className = "";
@@ -29,6 +30,7 @@ portfolioClick.onclick = function() {
 var portfolioClickBtn = document.getElementById("realizacjeBtn");
 portfolioClickBtn.onclick = function() {
     document.getElementById("input-toggle").checked = false;
+    makeBurgerNormal()
 
     if (content != "portfolio") {
         document.getElementById("home-div").className = "";
