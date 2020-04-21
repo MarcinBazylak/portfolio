@@ -37,12 +37,12 @@
 }
 
 .sp-one-open {   
-   transform: rotate(405deg) translateY(10px);
+   transform: rotate(765deg) translateY(10px);
    transition-duration: 0.5s;   
 }
 
 .sp-three-open {   
-   transform: rotate(-405deg) translateY(-10px);
+   transform: rotate(-765deg) translateY(-10px);
    transition-duration: 0.5s;   
 }
 
