@@ -245,28 +245,73 @@ button.contact:focus {
 button.home {
     font-family: Montserrat;
     background: linear-gradient(to bottom right, #ffffff, #f8f8f8);
-    margin: 10px 30px;
+    margin: 10px 30px 10px 0;
     font-weight: 400;
     cursor: pointer;
     border: solid 2px #eeeeee;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 24px;
     color: #333333;
     letter-spacing: 2px;
-    padding: 12px 25px 14px 25px;
     transition-duration: 0.5s;
     box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.2);
+    height: 60px;
+    min-width: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+button.home:before{
+   content: '';
+   display: block;
+   position: absolute;
+   background: rgba(255,255,255,1);
+   width: 60px;
+   height: 100%;
+   left: 0;
+   top: 0;
+   opacity: .5;
+   filter: blur(20px);
+   transform: translateX(-130px) skewX(-15deg);
+}
+
+button.home:after{
+   content: '';
+   display: block;
+   position: absolute;
+   background: rgba(255,255,255,0.2);
+   width: 30px;
+   height: 100%;
+   left: 30px;
+   top: 0;
+   opacity: 0;
+   filter: blur(30px);
+   transform: translateX(-100px) scaleX(-15deg);
+}
+
+button.home:hover:before {
+  transform: translateX(300px) skewX(-15deg);
+   opacity: .6;
+   transition: 0.8s ease;
+}
+
+button.home:hover:after {
+  transform: translateX(300px) skewX(-15deg);
+   opacity: 1;
+   transition: 0.8s ease;
 }
 
 button.home:hover {
-    transform: scale(1.02);
+    /* transform: scale(1.02); */
     box-shadow: 12px 12px 32px 0px rgba(0, 0, 0, 0.2);
+    background: #000;
+    color: #fff;
+    transition: 1s;
 }
 
 button.home:focus {
-    transition-duration: 0.1s;
-    transform: scale(1.01);
-    box-shadow: 6px 6px 20px 0px rgba(0, 0, 0, 0.2);
     outline: 0;
 }
 
@@ -430,6 +475,18 @@ textarea:focus {
         margin: 0;
         background: none;
     }
+
+    header {
+      background: white;
+      width: 80%;
+      border-bottom-left-radius: 200%;
+      position: fixed;
+      right: 0px;
+      z-index: 99999;
+      border: 1px solid #eee;
+      box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.2)
+    }
+
     div.kontakt {
         max-width: 95%;
     }

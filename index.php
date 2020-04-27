@@ -29,9 +29,9 @@ include 'stats.php'
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3">
     <link href="https://fonts.googleapis.com/css?family=KoHo|Montserrat|Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
-    <link rel="Stylesheet" type="text/css" href="css/style.css" />
-    <link rel="Stylesheet" type="text/css" href="css/menu.css" />
-    <link rel="Stylesheet" type="text/css" href="css/lbx.css" />
+    <link rel="Stylesheet" type="text/css" href="css/style.css?v=<?php echo time(); ?>" />
+    <link rel="Stylesheet" type="text/css" href="css/menu.css?v=<?php echo time(); ?>" />
+    <link rel="Stylesheet" type="text/css" href="css/lbx.css?v=<?php echo time(); ?>" />
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="_lightbox/dist/js/lightbox.js"></script>
@@ -262,7 +262,7 @@ include 'stats.php'
                                     class="captcha" maxlength="6" autocomplete="off" id="kod" required>
                             </div>
                             <div class="form_field">
-                                <button type="submit" class="contact" name="button">Wyślij wiadomość</button>
+                                <button type="submit" class="home" name="button">Wyślij wiadomość</button>
                             </div>
                         </div>
                     </form>

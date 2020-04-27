@@ -127,9 +127,11 @@ nav ul {
 
 nav #input-toggle:checked + ul {
    max-height: 500px;
+   border-bottom-left-radius: 20px;
    transition:max-height 0.5s ease-out;
    -webkit-transition:max-height 0.5s ease-out;
    -moz-transition:max-height 0.5s ease-out;
+   box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.2);
 }
 	
 nav ul li {
@@ -138,7 +140,7 @@ nav ul li {
  max-width: 100%;
  min-width:0;
  border-bottom:1px solid #bbbbbb;
- background: rgba(204, 204, 204, 0.9);
+ background: white;
  line-height: 80px;
  margin: 0;
 }
