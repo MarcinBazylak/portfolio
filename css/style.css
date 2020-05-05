@@ -42,39 +42,18 @@ a.nav-link {
 }
 
 #message {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 1s ease;
-}
-
-#message.open {
-    max-height: 100px;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
+   padding-top: 40px;
+   height: 150px;
+   opacity: 0;
+   overflow: hidden;
+   transition: all 0.5s ease;
 }
 
 #message.fade-in {
-    max-height: 100px;
-    opacity: 1;
-    overflow: hidden;
-    transition: all 0.5s ease;
+   opacity: 1;
+   transition: all 0.5s ease;
 }
 
-#message.fade-out {
-    max-height: 100px;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-}
-
-#message.close {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-}
 
 header {
     width: 100%;
@@ -221,7 +200,7 @@ button.contact {
     font-weight: 400;
     cursor: pointer;
     border: solid 2px #eeeeee;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     color: #333333;
     letter-spacing: 3px;
@@ -231,8 +210,8 @@ button.contact {
 }
 
 button.contact:hover {
-    transform: scale(1.02);
-    box-shadow: 12px 12px 32px 0px rgba(0, 0, 0, 0.2);
+   background: #000;
+   color: #fff;
 }
 
 button.contact:focus {
@@ -351,7 +330,7 @@ h1 {
     letter-spacing: 4px;
     font-family: Montserrat;
     line-height: initial;
-    padding-top: 150px;
+    padding-top: 50px;
     font-size: 60px;
     width: fit-content;
     margin: auto;
@@ -484,7 +463,8 @@ textarea:focus {
       right: 0px;
       z-index: 99999;
       border: 1px solid #eee;
-      box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.2)
+      box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.2);
+      opacity: 0.9;
     }
 
     div.kontakt {
@@ -523,11 +503,9 @@ textarea:focus {
         padding: 20px;
         line-height: 1.6;
         letter-spacing: 2px;
-        margin: 20px 0;
+        margin: 40px auto 20px auto;
         width: calc(100% - 40px);
         background: green;
-        border-radius: 0;
-        box-shadow: none;
     }
     div.red {
         border: 0;
@@ -536,10 +514,8 @@ textarea:focus {
         padding: 20px;
         line-height: 1.6;
         letter-spacing: 2px;
-        margin: 20px 0;
+        margin: 40px auto 20px auto;
         width: calc(100% - 40px);
         background: red;
-        border-radius: 0;
-        box-shadow: none;
     }
 }
