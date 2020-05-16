@@ -136,6 +136,25 @@ include 'stats.php'
 
             <div id="portfolio-div">
                <h1>Realizacje</h1>
+
+               <div class="projects">
+                  <div class="projects_photo">
+                     <a href="img/francesco.jpg" data-lightbox="image-2"><img src="img/francesco.jpg" alt="realizacje" class="realizacje"></a>
+                  </div>
+                  <div class="projects_description">
+                     <h3>Pizzeria FRANCESCO<br>Projekt w trakcie realizacji</h3>Strona internetowa Pizzerii Francesco. Projekt przewiduje możliwość zamawiania pizzy online z dowozem do klienta.
+                     <br>
+                     <b>Użyte technologie:</b>
+                     <br>
+                     Responsive Web Design,
+                     <br>
+                     <b>HTML</b>, <b>CSS</b>, <b>PHP</b>, <b>MySQL</b>, <b>Javascript</b>, Obsługa przez
+                     <b>CMS</b>
+                  </div>
+                  <div style="clear:both;"></div>
+               </div>
+
+
                <div class="projects">
                   <div class="projects_photo">
                      <a href="img/tracker1.jpg" data-lightbox="image-1"><img src="img/tracker1.jpg" alt="realizacje" class="realizacje" style="max-width: 120px;"></a>
